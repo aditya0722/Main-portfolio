@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aditya Sharma Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="hero-section">
+        <div class="content">
+            <div class="image-container">
+                <img src="img/profile.png" alt="Aditya Sharma">
+            </div>
+            <h1 id="typing-name"></h1>
+            <p>Fullstack Developer | Designer</p>
+            <a href="#projects" class="btn">View My Work</a>
+        </div>
+        <div class="stars"></div>
+    </section>
+
+    <section id="projects" class="projects-section">
+        <h2>Projects</h2>
+        <div class="project-cards">
+            <div class="project-card">
+                <h3>Project One</h3>
+                <p>Description of Project One.</p>
+            </div>
+            <div class="project-card">
+                <h3>Project Two</h3>
+                <p>Description of Project Two.</p>
+            </div>
+            <div class="project-card">
+                <h3>Project Three</h3>
+                <p>Description of Project Three.</p>
+            </div>
+        </div>
+    </section>]
+    <script>
+    const text = "Aditya Sharma";
+    let index = 0;
+    const typingName = document.getElementById("typing-name");
+    
+    function typeEffect() {
+        if (index < text.length) {
+            typingName.textContent += text.charAt(index);
+            index++;
+            setTimeout(typeEffect, 150); // Speed of typing
+        } else {
+            // After text is fully typed, wait 3 seconds and restart
+            setTimeout(() => {
+                typingName.textContent = ""; // Clear the text
+                index = 0; // Reset the index
+                typeEffect(); // Restart the typing effect
+            }, 3000); // Wait 3 seconds before restarting
+        }
+    }
+    
+    document.addEventListener("DOMContentLoaded", typeEffect);
+
+
+
+    //for background
+    function createStar() {
+        const star = document.createElement('div');
+        star.classList.add('star');
+    
+        // Random position and size
+        star.style.left = `${Math.random() * 100}vw`;
+        star.style.animationDuration = `${Math.random() * 3 + 4}s`;
+        star.style.width = `${Math.random() * 3 + 1}px`;
+        star.style.height = star.style.width; // Keep it a circle
+    
+        document.querySelector('.stars').appendChild(star);
+    
+        // Remove the star after it falls
+        setTimeout(() => {
+            star.remove();
+        }, 5000); // Adjust the time based on animation duration
+    }
+    
+    // Create stars at intervals
+    setInterval(createStar, 50); // Adjust the frequency of stars
+</script>
+</body>
+</html>
