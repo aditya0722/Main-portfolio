@@ -469,6 +469,7 @@ p {
     margin-bottom: 1.5rem;
 }
 
+
 .footer-logo img {
     border-radius: 50%;
     width: 80px;
@@ -529,3 +530,12 @@ p {
 }
 
 
+@media (max-width: 768px) {
+
+    .footer-content{
+    flex-direction: column;
+    }
+
+
+
+}
