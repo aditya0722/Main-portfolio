@@ -139,8 +139,7 @@ p {
     font-size: 1.2rem;
     border-radius: 50px;
     border: 2px solid transparent;
-    background-image: linear-gradient(transparent, transparent), 
-                      linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    
     background-origin: border-box;
     background-clip: content-box, border-box;
     transition: background-color 0.3s, border-radius 0.3s ease-in-out;
